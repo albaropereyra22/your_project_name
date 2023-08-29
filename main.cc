@@ -2,8 +2,7 @@
 
 int main() {
     //Catch SIGINT
-    drogon::app().setIntSignalHandler([&] {std::cerr << "Alarm! SIGINT!";drogon::app().quit() });
-    //app().quit()
+    drogon::app().setIntSignalHandler([&] {std::cerr << "Alarm! SIGINT!"; drogon::app().quit(); });
     //Set HTTP listener address and port
     drogon::app().addListener("0.0.0.0",80);
     //Load config file
