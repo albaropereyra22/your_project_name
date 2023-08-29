@@ -241,15 +241,16 @@
     //simple_controllers_map: Used to configure mapping from path to simple controller
     "simple_controllers_map": [
       {
-        "path": "C:\\Users\\dell\\your_project_name\\",
-        "controller": "HttpController",
+        "path": "/test",
+        "controller": "TestCtrl",
         "http_methods": [
           "get",
           "post"
-        ],
-        "filters": [
-          "FilterClassName"
         ]
+        //],
+        //"filters": [
+        //  "FilterClassName"
+        //]
       }
     ],
     //idle_connection_timeout: Defaults to 60 seconds, the lifetime 
