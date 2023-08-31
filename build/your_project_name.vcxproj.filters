@@ -4,6 +4,9 @@
     <ClCompile Include="C:\Users\dell\your_project_name\main.cc">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="C:\Users\dell\your_project_name\controllers\TestCtrl.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="C:\Users\dell\your_project_name\CMakeLists.txt" />
