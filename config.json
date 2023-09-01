@@ -251,6 +251,18 @@
         //"filters": [
         //  "FilterClassName"
         //]
+      },
+      {
+        "path": "/json",
+        "controller": "MyClass",
+        "http_methods": [
+          "get",
+          "post"
+        ]
+        //],
+        //"filters": [
+        //  "FilterClassName"
+        //]
       }
     ],
     //idle_connection_timeout: Defaults to 60 seconds, the lifetime 
