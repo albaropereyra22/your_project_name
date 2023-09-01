@@ -2,9 +2,10 @@
 using namespace drogon;
 
 int main() {
-    //Catch SIGINT
+    //Start app() select log path and log level
     app().setLogPath("C:\\Users\\dell\\your_project_name\\")
          .setLogLevel(trantor::Logger::kWarn)
+         //Catch SIGINT
          .setIntSignalHandler([&] {std::cerr << "Alarm! SIGINT!"; app().quit(); })
          //Set HTTP listener address and port
          .addListener("0.0.0.0",80)

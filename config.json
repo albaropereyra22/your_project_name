@@ -263,6 +263,13 @@
         //"filters": [
         //  "FilterClassName"
         //]
+      },
+      {
+        "path": "/list_para",
+        "controller": "list_para",
+        "http_methods": [
+          "get"
+        ]
       }
     ],
     //idle_connection_timeout: Defaults to 60 seconds, the lifetime 
