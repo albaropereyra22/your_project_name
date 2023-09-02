@@ -23,7 +23,8 @@ void User::getInfo(const HttpRequestPtr &req,
                    std::string userId,
                    const std::string &token) const
 {
-    LOG_DEBUG<<"User "<<userId<<" get his information";
+    LOG_DEBUG << "User " << userId << " get his information";
+    LOG_DEBUG << "User " << token << " got the token";
 
     //Verify the validity of the token, etc.
     //Read the database or cache to get user information
@@ -31,6 +32,7 @@ void User::getInfo(const HttpRequestPtr &req,
     ret["result"]="ok";
     ret["user_name"]="Jack";
     ret["user_id"]=userId;
+    ret["token"] = token;
     ret["gender"]=1;
     auto resp=HttpResponse::newHttpJsonResponse(ret);
     callback(resp);
