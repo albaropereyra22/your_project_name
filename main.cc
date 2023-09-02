@@ -2,6 +2,18 @@
 using namespace drogon;
 
 int main() {
+    drogon::HttpAppFramework::instance()
+        .registerHandler("/list_para",
+            [=](const HttpRequestPtr& req,
+                std::function<void(const HttpResponsePtr&)>&& callback)
+            {
+                auto para = req->getParameters();
+                HttpViewData data;
+                data.insert("title", "ListParameters");
+                data.insert("parameters", para);
+                auto resp = HttpResponse::newHttpViewResponse("ListParameters.csp", data);
+                callback(resp);
+            });
     //Start app() select log path and log level
     app().setLogPath("C:\\Users\\dell\\your_project_name\\")
          .setLogLevel(trantor::Logger::kWarn)

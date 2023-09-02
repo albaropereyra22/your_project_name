@@ -406,7 +406,6 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="C:\Users\dell\your_project_name\controllers\MyClass.cc" />
     <ClCompile Include="C:\Users\dell\your_project_name\controllers\TestCtrl.cc" />
     <ClCompile Include="C:\Users\dell\your_project_name\controllers\demo_v1_User.cc" />
-    <ClCompile Include="C:\Users\dell\your_project_name\controllers\list_para.cc" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="C:\Users\dell\your_project_name\build\ZERO_CHECK.vcxproj">

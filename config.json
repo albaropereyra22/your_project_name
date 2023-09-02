@@ -268,7 +268,8 @@
         "path": "/list_para",
         "controller": "list_para",
         "http_methods": [
-          "get"
+          "get",
+          "post"
         ]
       }
     ],
