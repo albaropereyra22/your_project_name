@@ -246,11 +246,10 @@
         "http_methods": [
           "get",
           "post"
+        ],
+        "filters": [
+          "TimeFilter"
         ]
-        //],
-        //"filters": [
-        //  "FilterClassName"
-        //]
       },
       {
         "path": "/json",
