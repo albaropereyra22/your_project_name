@@ -248,7 +248,7 @@
           "post"
         ],
         "filters": [
-          "TimeFilter"
+          "LoginFilter"
         ]
       },
       {

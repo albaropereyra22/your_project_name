@@ -3,16 +3,17 @@ using namespace drogon;
 
 int main() {
     drogon::HttpAppFramework::instance()
-        .registerHandler("/slow",
-            [=](const HttpRequestPtr& req,
-                std::function<void(const HttpResponsePtr&)>&& callback)
+        .registerHandler("/test2?username={name}",
+            [](const HttpRequestPtr& req,
+                std::function<void(const HttpResponsePtr&)>&& callback,
+                const std::string& name)
             {
                 Json::Value json;
                 json["result"] = "ok";
+                json["message"] = std::string("hello,") + name;
                 auto resp = HttpResponse::newHttpJsonResponse(json);
                 callback(resp);
-            },
-            { Get,"TimeFilter" });
+            });
     drogon::HttpAppFramework::instance()
         .registerHandler("/list_para",
             [=](const HttpRequestPtr& req,

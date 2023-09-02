@@ -16,6 +16,9 @@
     <ClCompile Include="C:\Users\dell\your_project_name\controllers\demo_v1_User.cc">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="C:\Users\dell\your_project_name\filters\LoginFilter.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="C:\Users\dell\your_project_name\build\CMakeFiles\14bcda41e17f52344f39228523817bd2\ListParameters.h.rule">
