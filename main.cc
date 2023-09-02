@@ -3,6 +3,17 @@ using namespace drogon;
 
 int main() {
     drogon::HttpAppFramework::instance()
+        .registerHandler("/slow",
+            [=](const HttpRequestPtr& req,
+                std::function<void(const HttpResponsePtr&)>&& callback)
+            {
+                Json::Value json;
+                json["result"] = "ok";
+                auto resp = HttpResponse::newHttpJsonResponse(json);
+                callback(resp);
+            },
+            { Get,"TimeFilter" });
+    drogon::HttpAppFramework::instance()
         .registerHandler("/list_para",
             [=](const HttpRequestPtr& req,
                 std::function<void(const HttpResponsePtr&)>&& callback)
@@ -14,10 +25,7 @@ int main() {
                 auto resp = HttpResponse::newHttpViewResponse("ListParameters.csp", data);
                 callback(resp);
             });
-    //select log path and log level
-    // removed because it prevents debugging 
-    //.setLogPath("C:\\Users\\dell\\your_project_name\\")
-    //.setLogLevel(trantor::Logger::kWarn)
+
       
     //start app
     //Catch SIGINT
@@ -26,6 +34,10 @@ int main() {
          .addListener("0.0.0.0", 80)
          //Load config file
          .loadConfigFile("C:\\Users\\dell\\your_project_name\\config.json")
+         // removed because it prevents debugging 
+         // select log path and log level
+         //.setLogPath("C:\\Users\\dell\\your_project_name\\")
+         //.setLogLevel(trantor::Logger::kWarn)
          //Run HTTP framework,the method will block in the internal event loop
          .run();
     return 0;
