@@ -26,7 +26,17 @@ int main() {
                 auto resp = HttpResponse::newHttpViewResponse("ListParameters.csp", data);
                 callback(resp);
             });
-
+    drogon::HttpAppFramework::instance()
+        .registerHandler("/slow",
+            [=](const HttpRequestPtr& req,
+                std::function<void(const HttpResponsePtr&)>&& callback)
+            {
+                Json::Value json;
+                json["result"] = "ok";
+                auto resp = HttpResponse::newHttpJsonResponse(json);
+                callback(resp);
+            },
+            { Get,"TimeFilter" });
       
     //start app
     //Catch SIGINT
