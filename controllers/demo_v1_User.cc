@@ -10,6 +10,7 @@ void User::login(const HttpRequestPtr &req,
                  const std::string &password)
 {
     LOG_DEBUG<<"User "<<userId<<" login";
+    LOG_DEBUG<<"User "<<password<<" ;)";
     //Authentication algorithm, read database, verify, identify, etc...
     //...
     Json::Value ret;

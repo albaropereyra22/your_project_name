@@ -4,9 +4,6 @@
     <ClCompile Include="C:\Users\dell\your_project_name\main.cc">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\dell\your_project_name\build\ListParameters.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="C:\Users\dell\your_project_name\controllers\MyClass.cc">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -21,15 +18,9 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\Users\dell\your_project_name\build\CMakeFiles\14bcda41e17f52344f39228523817bd2\ListParameters.h.rule">
-      <Filter>CMake Rules</Filter>
-    </CustomBuild>
     <CustomBuild Include="C:\Users\dell\your_project_name\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Filter Include="CMake Rules">
-      <UniqueIdentifier>{6DF769FA-D76F-3401-88EC-57D205F4A6B4}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files">
       <UniqueIdentifier>{FE4603CC-5DA1-3ED7-8864-52FE725C560A}</UniqueIdentifier>
     </Filter>
