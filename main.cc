@@ -47,8 +47,6 @@ int main() {
     //start app
     //Catch SIGINT
     app().setIntSignalHandler([&] {std::cerr << "Alarm! SIGINT!"; app().quit(); })
-         //Set HTTP listener address and port
-         .addListener("0.0.0.0", 80)
          //Load config file
          .loadConfigFile("C:\\Users\\dell\\your_project_name\\config.json")
          // removed because it prevents debugging 
