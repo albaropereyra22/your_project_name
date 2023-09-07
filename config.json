@@ -223,7 +223,7 @@
       //The TRACE level is only valid when built in DEBUG mode.
       "log_level": "DEBUG",
       //display_local_time: false by default, if true, the log time is displayed in local time
-      "display_local_time": false
+      "display_local_time": true
     },
     //run_as_daemon: False by default
     "run_as_daemon": false,
