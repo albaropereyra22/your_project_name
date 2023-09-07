@@ -2,6 +2,7 @@
 using namespace drogon;
 
 int main() {
+    drogon::HttpAppFramework::instance().enableSession(1200);
     drogon::HttpAppFramework::instance()
         .registerHandler("/test2?username={name}",
             [](const HttpRequestPtr& req,
@@ -38,6 +39,11 @@ int main() {
             },
             { Get,"TimeFilter" });
       
+    // This is how you add headers to Drogon:
+    // CORS Policy - Allow connections from anywhere
+    app().registerPostHandlingAdvice([](const HttpRequestPtr &req, const HttpResponsePtr &resp) {
+        resp->addHeader("Access-Control-Allow-Origin", "*");
+    });
     //start app
     //Catch SIGINT
     app().setIntSignalHandler([&] {std::cerr << "Alarm! SIGINT!"; app().quit(); })
