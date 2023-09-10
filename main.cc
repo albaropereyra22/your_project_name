@@ -11,7 +11,7 @@ int main() {
             {
                 Json::Value json;
                 json["result"] = "ok";
-                json["message"] = std::string("Here is the email address:") + email;
+                json["message"] = std::string("Here is the email address: ") + email;
                 auto resp = HttpResponse::newHttpJsonResponse(json);
                 callback(resp);
             });
