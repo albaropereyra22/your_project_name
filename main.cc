@@ -4,6 +4,18 @@ using namespace drogon;
 int main() {
     drogon::HttpAppFramework::instance().enableSession(1200);
     drogon::HttpAppFramework::instance()
+        .registerHandler("/subscribe?newsletter1={email}",
+            [](const HttpRequestPtr& req,
+                std::function<void(const HttpResponsePtr&)>&& callback,
+                const std::string& email)
+            {
+                Json::Value json;
+                json["result"] = "ok";
+                json["message"] = std::string("Here is the email address:") + email;
+                auto resp = HttpResponse::newHttpJsonResponse(json);
+                callback(resp);
+            });
+    drogon::HttpAppFramework::instance()
         .registerHandler("/test2?username={name}",
             [](const HttpRequestPtr& req,
                 std::function<void(const HttpResponsePtr&)>&& callback,
